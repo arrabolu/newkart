@@ -1,0 +1,34 @@
+<ng-container *ngFor="let product of productsArray "  >
+  <div
+    class="ekart--product--item"
+    *ngIf="(
+      (this.textSearched == '' ||
+        product.title.toLowerCase().includes(this.textSearched.toLowerCase())) &&
+      (this.selectedFilter.toLowerCase() == 'all' ||
+        product.category.toLowerCase() === this.selectedFilter  ) ) "
+    (click)="onProductClick(product)"  >
+    <!-- product.title != "fragrances"  || product.title != "laptops" || product.title != "laptops" " -->
+    <div class="ekart-wishlist-sale-container">
+      <div class="ekart--add--to--wishlist">
+        <i class="fa fa-heart-o" aria-hidden="true"> </i>
+      </div>
+      <div class="ekart-on-sale-tag">
+        {{ product.discountPercentage.toFixed() }} % Off
+      </div>
+    </div>
+    <div class="ekart--product--image">
+      <img width="275" height="250" [src]="product.thumbnail" />
+    </div>
+    <div class="ekart--add--to--price">{{ product.rating }} / 5</div>
+    <div class="ekart--product--name">{{ product.title }}</div>
+    <div class="ekart--product--available-colors">
+      {{ product.price | currency : "USD" }}
+    </div>
+    <!-- <div class="ekart--product--category">  {{product.description}} </div> -->
+  </div>
+
+ <!--  <ng-template *ngIf="productlist ">
+    No search results found 😕
+  </ng-template> -->
+
+</ng-container>

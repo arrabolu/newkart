@@ -1,0 +1,73 @@
+<div class="ekart--product--details--info scroll"  >
+  <div class="ekart-product-detail-close" (click)="onClose()" >
+      <i class="fa fa-times" aria-hidden="true"></i>
+  </div>
+
+  <div class="ekart-product-detail-image">
+      <img [src]="selectedProduct.images[0]" class="ekart-product-detail-image">
+  </div>
+
+  <div class="ekart-product-detail">
+      <div class="ekart-product-detail-name">
+          <h2>{{selectedProduct.title}}</h2>
+      </div>
+      <div class="ekart-product-detail-gbc">
+          <span>{{selectedProduct.category}}</span>
+          <span>{{selectedProduct.brand}}</span>
+          <span>{{selectedProduct.rating }} / 5</span>
+          <span *ngIf="this.selectedProduct.rating > 4.5 ; else saveAmount" Bgchanger>Best Seller</span>
+          <ng-template #saveAmount>
+            <span Bgchanger>{{ ((selectedProduct.discountPercentage / 100) * selectedProduct.price).toFixed() | currency }} OFF</span>
+          </ng-template>
+      </div>
+
+      <div style="margin-top: 40px;">
+          <p>
+              <b>MRP : </b>
+              <span style="font-size: larger; font-weight: 1000; margin-left: 0%; margin-right: 0px;">{{ (selectedProduct.price - ((selectedProduct.discountPercentage / 100) * selectedProduct.price)).toFixed()  | currency }}</span>
+              <span style="padding: 0px;" ><s>{{selectedProduct.price | currency }}</s></span>
+              <span style="background-color: gray;" >{{selectedProduct.discountPercentage.toFixed()}} % off</span>
+          </p>
+      </div>
+
+      <div class="ekart-product-detail-size" >
+        Instock : {{selectedProduct.stock}}
+      </div>
+     <!--  <div class="ekart-product-detail-size">
+          <div style="padding: 5px 0px;border-bottom: #ccc 2px solid">
+              <h4>Available Size</h4>
+          </div>
+          <diV style="margin-top: 20px">
+              <span class="ekart-product-detail-available-size">6</span>
+              <span class="ekart-product-detail-available-size">7</span>
+              <span class="ekart-product-detail-available-size">8</span>
+              <span class="ekart-product-detail-available-size">9</span>
+          </diV>
+      </div> -->
+
+    <!--   <div class="ekart-product-detail-color">
+          <div style="padding: 5px 0px;border-bottom: #ccc 2px solid">
+              <h4>Available Color</h4>
+          </div>
+          <diV style="margin-top: 20px;">
+              <span class="ekart-product-detail-available-color" style="background-color: red;"></span>
+              <span class="ekart-product-detail-available-color" style="background-color: green;"></span>
+              <span class="ekart-product-detail-available-color" style="background-color: black;"></span>
+              <span class="ekart-product-detail-available-color" style="background-color: blue;"></span>
+          </diV>
+      </div> -->
+
+      <div class="ekart-product-detail-desc">
+          <div style="padding: 5px 0px;border-top: #ccc 2px solid">
+              <h4 style="font-size: large; margin-top: 10px;" >Product Description</h4>
+          </div>
+          <div style="font-size: large;" >
+              <p>{{selectedProduct.description}}</p>
+          </div>
+      </div>
+  </div>
+  <div class="ekart-product-detail-addtoCart">
+      <button class="btn-add-to-cart">ADD TO CART</button>
+  </div>
+</div>
+<div class="overlay"></div>

@@ -1,0 +1,20 @@
+<div class="ekart--search--product">
+  <input class="ekart-search-product-input" #searchedStr />
+  <!-- html templete reference -->
+  <button (click)="onClick(searchedStr)" class="btn btn-search">Search</button>
+</div>
+
+<!-- (selectedFilterEmitter)="onSelectedFilter($event)" -->
+<app-filter [searchedText]="textSearched" #filter></app-filter>
+
+<app-product-list
+  (selectedProdEmitter)="onSelectedProdEmitted($event)"
+  [textSearched]="textSearched"
+  [selectedFilter]="filter.filteredValue"
+></app-product-list>
+
+<app-product-detail
+  (closeSideModelEmitter)="onModelClosed($event)"
+  [selectedProduct]="selectedProd"
+  *ngIf="selectedProd"
+></app-product-detail>
