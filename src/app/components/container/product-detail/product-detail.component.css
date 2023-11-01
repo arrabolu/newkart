@@ -60,7 +60,7 @@
   border-radius: 5px;
 }
 .ekart-product-detail-size{
-  margin: 30px 0px;
+  margin-top: 20px;
 }
 span{
   padding: 5px 10px;
@@ -84,7 +84,7 @@ span{
   font-size: 14px;
 }
 .ekart-product-detail-addtoCart{
-  margin: 20px 0px;
+  margin-top : 10px
 }
 .btn-add-to-cart{
   border: none;
@@ -107,4 +107,23 @@ span{
 .scroll::-webkit-scrollbar-thumb {
   border-radius:5px;
   -webkit-box-shadow: inset 0 0 6px #28282B;
+}
+
+.green{
+  background-color: rgb(174, 228, 174);
+}
+
+.orange{
+  background-color: rgb(241, 221, 182);
+}
+
+@media only screen and (max-width: 600px) {
+  .ekart--product--details--info {
+      width: 90%;
+  }
+
+  .ekart-product-detail-gbc{
+    display: flex;
+    flex-wrap: wrap;
+  }
 }

@@ -1,28 +1,24 @@
-
 <div class="filter-container">
-
-  <div *ngIf="searchedText" class="ekart-search-result-for"  ><strong>Search result for:</strong>{{this.searchedText}}</div>
-
-
-  <div (click)="onSelect($event)" >
-    <span>Filter: </span>
-
-  <input type="radio"  name="filter" value="All" />
-  <span>All</span>
-
-  <input type="radio"   name="filter" value="smartphones" />
-  <span>Smartphones</span>
-
-  <input type="radio"  name="filter" value="laptops" />
-  <span>Laptops</span>
-
-  <input type="radio" name="filter" value="fragrances">
-  <span>Fragrances</span>
-
-  <!-- <input type="radio" name="filter" value="other">
-  <span>Others</span> -->
-
+  <div *ngIf="searchedText" class="ekart-search-result-for">
+    <strong>Search result for &nbsp; : &nbsp; </strong>{{ this.searchedText }}
   </div>
 
+  <div (click)="onSelect($event)" class="filter-hover">
+    <span>Filter: </span>
 
+    <input type="radio" name="filter" value="All" />
+    <span>All</span>
+
+    <input type="radio" name="filter" value="smartphones" />
+    <span>Smartphones</span>
+
+    <input type="radio" name="filter" value="laptops" />
+    <span>Laptops</span>
+
+    <input type="radio" name="filter" value="fragrances" />
+    <span>Fragrances</span>
+
+    <!-- <input type="radio" name="filter" value="other">
+  <span>Others</span> -->
+  </div>
 </div>

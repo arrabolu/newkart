@@ -23,15 +23,19 @@
 .ekart--top--bar{
 
 
-  padding-top: 10px;
+  padding-top: 17px;
   padding-bottom: 15px;
-  padding-right: 30px;
-display: flex;
-justify-content: space-between;
+  padding-right: 15px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .ekart--top--bar a {
   color: white;
+}
+
+.ekart--top--ba  :hover{
+  cursor: pointer;
 }
 
 .ekart-menu{

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { BgchangerDirective } from './services/custom-directives/bgchanger.directive';
 import { CarouselComponent } from './components/container/product-detail/carousel/carousel.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -31,6 +34,11 @@ import { CarouselComponent } from './components/container/product-detail/carouse
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
+    CarouselModule,
+    ToastrModule.forRoot({
+      // positionClass: 'toast-bottom-left',
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

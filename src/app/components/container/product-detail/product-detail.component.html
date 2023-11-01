@@ -3,9 +3,10 @@
       <i class="fa fa-times" aria-hidden="true"></i>
   </div>
 
-  <div class="ekart-product-detail-image">
-      <img [src]="selectedProduct.images[0]" class="ekart-product-detail-image">
-  </div>
+  <span class="ekart-product-detail-image">
+    <app-carousel [imageArray]="images" ></app-carousel>
+      <!-- <img [src]="selectedProduct.images[0]" class="ekart-product-detail-image"> -->
+  </span>
 
   <div class="ekart-product-detail">
       <div class="ekart-product-detail-name">
@@ -31,7 +32,7 @@
       </div>
 
       <div class="ekart-product-detail-size" >
-        Instock : {{selectedProduct.stock}}
+        Instock : <span [ngClass]="selectedProduct.stock > 50 ? 'green' : 'orange' " >{{selectedProduct.stock}}</span>
       </div>
      <!--  <div class="ekart-product-detail-size">
           <div style="padding: 5px 0px;border-bottom: #ccc 2px solid">
@@ -58,7 +59,7 @@
       </div> -->
 
       <div class="ekart-product-detail-desc">
-          <div style="padding: 5px 0px;border-top: #ccc 2px solid">
+          <div style="border-top: #ccc 2px solid">
               <h4 style="font-size: large; margin-top: 10px;" >Product Description</h4>
           </div>
           <div style="font-size: large;" >
@@ -67,7 +68,10 @@
       </div>
   </div>
   <div class="ekart-product-detail-addtoCart">
-      <button class="btn-add-to-cart">ADD TO CART</button>
+      <button (click)="onAddToCart()" class="btn-add-to-cart">ADD TO CART</button>
   </div>
 </div>
 <div class="overlay"></div>
+
+
+
