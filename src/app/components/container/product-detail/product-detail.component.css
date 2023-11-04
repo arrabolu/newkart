@@ -117,6 +117,8 @@ span{
   background-color: rgb(241, 221, 182);
 }
 
+
+
 @media only screen and (max-width: 600px) {
   .ekart--product--details--info {
       width: 90%;

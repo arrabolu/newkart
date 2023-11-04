@@ -1,7 +1,8 @@
-<div [ngClass]="{ darktheme : isDarkTheme }">
+<div [ngClass]="{ darktheme : isDarkTheme }" class="min-h-screen" >
 
   <app-header (themeEmmiter)="onChangeTheme($event)" ></app-header>
-  <app-container></app-container>
+  <!-- <app-container></app-container> -->
+  <router-outlet></router-outlet>
   <!-- <app-footer></app-footer> -->
 
 </div>

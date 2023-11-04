@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { product } from 'src/app/models/product';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -9,7 +10,7 @@ import { product } from 'src/app/models/product';
 })
 export class ProductDetailComponent implements OnInit {
 
-  constructor(private toastr: ToastrService) {
+  constructor(private toastr: ToastrService, private cartService : CartService) {
 
   }
 
@@ -35,6 +36,8 @@ export class ProductDetailComponent implements OnInit {
 
   onAddToCart(){
     this.onClose()
+
+    this.cartService.addToCart(this.selectedProduct)
     this.toastr.success('Added to Cart', 'Success',{
       timeOut: 3000,
     });

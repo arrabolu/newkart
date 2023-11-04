@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angu
 import { ProductService } from 'src/app/services/product.service';
 import { product } from '../../../models/product.js';
 
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -25,24 +26,20 @@ export class ProductListComponent implements OnInit {
   @Input()
   textSearched  =  '' ;
 
-  constructor(private prodservice: ProductService) {
+  constructor(private prodservice: ProductService, private activatedRoute : ActivatedRoute) {
 
   }
 
   ngOnInit() {
-    this.prodservice.getProducts().subscribe(
-      (res: any) => {
-        console.log('response: ', res);
-        this.productsArray = res.products;
-      },
-      (err) => {
-        console.log('Error: ', err);
-      },
-      () => {
-        console.log('api call completed');
-      }
-    );
+    // this.prodservice.getProducts().subscribe(
+    //   (res: any) => {
+    //     console.log('response: ', res);
+    //     this.productsArray = res.products;
+    //   }
+    // );
 
+    this.productsArray =  this.activatedRoute.snapshot.data['items'].products
+    console.log(this.productsArray);
 
 
   }

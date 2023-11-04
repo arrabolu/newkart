@@ -41,6 +41,9 @@
   font-weight: bold;
 }
 
+img{
+  height: inherit;
+}
 
 .ekart--add--to--price{
   padding:1px 5px;

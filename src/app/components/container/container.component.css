@@ -19,11 +19,11 @@
 }
 
 .btn-search{
-  padding: 8px 25px;
-  background-color: black;
-  margin-left: -5px;
-  color:#fff;
-  height: 34px;
+  padding: 4px 25px;
+    background-color: black;
+    margin-left: -5px;
+    color: #fff;
+    height: 32px;
 }
 
 .ekart-search-result-for{
@@ -47,3 +47,4 @@ app-product-list
     flex-wrap: wrap;
     gap: 10px 80px;
 }
+

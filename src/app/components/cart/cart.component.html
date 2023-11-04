@@ -1,0 +1,292 @@
+<!-- <div>
+  <div class="flex flex-col justify-center items-center h-3/4 mt-5 min-h-screen">
+    <div class="relative flex flex-col items-center rounded-[10px] border-[1px] border-gray-200 w-[576px] mx-auto p-4 bg-white bg-clip-border shadow-md dark:border-[#ffffff33] dark:!bg-navy-800 dark:text-white dark:shadow-none">
+      <div class="text-lg font-bold text-navy-700 dark:text-white">
+        Cart
+    </div>
+
+        <div *ngFor="let item of cartItems" class="flex h-full w-full items-start justify-between rounded-md border-[1px] border-[transparent] dark:hover:border-white/20 bg-white px-3 py-[20px] transition-all duration-150 hover:border-gray-200 dark:!bg-navy-800 dark:hover:!bg-navy-700">
+            <div class="flex items-center gap-3">
+                <div class="flex h-16 w-16 items-center justify-center">
+                <img
+                    class="h-full w-full rounded-xl"
+                    [src]="item.thumbnail"
+                    alt=""
+                />
+                </div>
+                <div class="flex flex-col">
+                <h5 class="text-base font-bold text-navy-700 dark:text-white">
+                  {{item.title}} - {{item.brand}}
+                </h5>
+
+                </div>
+
+
+            </div>
+            <div class="mt-1 flex items-center justify-center text-navy-700 dark:text-white">
+
+                <div class="ml-1 flex items-center text-sm font-bold text-navy-700 mr-7 dark:text-white">
+                <p class="ml-1">{{item.price | currency}}</p>
+                </div>
+
+                <span (click)="onDeleteItem(item)" class="text-red-500 hover:cursor-pointer text-lg">
+                  <i class="fa fa-trash-o"></i>
+                </span>
+
+            </div>
+        </div>
+
+            <div class="flex items-center gap-3">
+                <div class="flex h-16 w-16 items-center justify-center">
+                <img
+                    class="h-full w-full rounded-xl"
+                    src="https://horizon-tailwind-react-corporate-7s21b54hb-horizon-ui.vercel.app/static/media/Nft6.9ff5403226e81a6fd390.png"
+                    alt=""
+                />
+                </div>
+                <div class="flex flex-col">
+                <h5 class="text-base font-bold text-navy-700 dark:text-white">
+                    3D Cubes Art
+                </h5>
+                <p class="mt-1 text-sm font-normal text-gray-600">
+                    Esthera Jackson
+                </p>
+                </div>
+            </div>
+            <div class="mt-1 flex items-center justify-center text-navy-700 dark:text-white">
+                <div>
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M311.9 260.8L160 353.6 8 260.8 160 0l151.9 260.8zM160 383.4L8 290.6 160 512l152-221.4-152 92.8z"></path></svg>
+                </div>
+                <div class="ml-1 flex items-center text-sm font-bold text-navy-700 dark:text-white">
+                <p>   </p>
+                0.4<p class="ml-1">ETH</p>
+                </div>
+                <div class="ml-2 flex items-center text-sm font-normal text-gray-600 dark:text-white">
+                <p>30s</p>
+                <p class="ml-1">ago</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex h-full w-full items-start justify-between rounded-md border-[1px] border-[transparent] dark:hover:border-white/20 bg-white px-3 py-[20px] transition-all duration-150 hover:border-gray-200 dark:!bg-navy-800 dark:hover:!bg-navy-700">
+            <div class="flex items-center gap-3">
+                <div class="flex h-16 w-16 items-center justify-center">
+                <img
+                    class="h-full w-full rounded-xl"
+                    src="https://horizon-tailwind-react-corporate-7s21b54hb-horizon-ui.vercel.app/static/media/Nft4.5fc37877b25c9fb9a52d.png"
+                    alt=""
+                />
+                </div>
+                <div class="flex flex-col">
+                <h5 class="text-base font-bold text-navy-700 dark:text-white">
+                    Swipe Circles
+                </h5>
+                <p class="mt-1 text-sm font-normal text-gray-600">
+                    Peter Will
+                </p>
+                </div>
+            </div>
+            <div class="mt-1 flex items-center justify-center text-navy-700 dark:text-white">
+                <div>
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M311.9 260.8L160 353.6 8 260.8 160 0l151.9 260.8zM160 383.4L8 290.6 160 512l152-221.4-152 92.8z"></path></svg>
+                </div>
+                <div class="ml-1 flex items-center text-sm font-bold text-navy-700 dark:text-white">
+                <p>   </p>
+                0.4<p class="ml-1">ETH</p>
+                </div>
+                <div class="ml-2 flex items-center text-sm font-normal text-gray-600 dark:text-white">
+                <p>4h</p>
+                <p class="ml-1">ago</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex h-full w-full items-start justify-between rounded-md border-[1px] border-[transparent] dark:hover:border-white/20 bg-white px-3 py-[20px] transition-all duration-150 hover:border-gray-200 dark:!bg-navy-800 dark:hover:!bg-navy-700">
+            <div class="flex items-center gap-3">
+                <div class="flex h-16 w-16 items-center justify-center">
+                <img
+                    class="h-full w-full rounded-xl"
+                    src="https://horizon-tailwind-react-corporate-7s21b54hb-horizon-ui.vercel.app/static/media/Nft3.3b3e6a4b3ada7618de6c.png"
+                    alt=""
+                />
+                </div>
+                <div class="flex flex-col">
+                <h5 class="text-base font-bold text-navy-700 dark:text-white">
+                    Swipe Circles
+                </h5>
+                <p class="mt-1 text-sm font-normal text-gray-600">
+                    Manny Gates
+                </p>
+                </div>
+            </div>
+            <div class="mt-1 flex items-center justify-center text-navy-700 dark:text-white">
+                <div>
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M311.9 260.8L160 353.6 8 260.8 160 0l151.9 260.8zM160 383.4L8 290.6 160 512l152-221.4-152 92.8z"></path></svg>
+                </div>
+                <div class="ml-1 flex items-center text-sm font-bold text-navy-700 dark:text-white">
+                <p>   </p>
+                0.4<p class="ml-1">ETH</p>
+                </div>
+                <div class="ml-2 flex items-center text-sm font-normal text-gray-600 dark:text-white">
+                <p>30s</p>
+                <p class="ml-1">ago</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex h-full w-full items-start justify-between rounded-md border-[1px] border-[transparent] dark:hover:border-white/20 bg-white px-3 py-[20px] transition-all duration-150 hover:border-gray-200 dark:!bg-navy-800 dark:hover:!bg-navy-700">
+            <div class="flex items-center gap-3">
+                <div class="flex h-16 w-16 items-center justify-center">
+                <img
+                    class="h-full w-full rounded-xl"
+                    src="https://horizon-tailwind-react-corporate-7s21b54hb-horizon-ui.vercel.app/static/media/Nft5.62dbaf7dd91b4180035c.png"
+                    alt=""
+                />
+                </div>
+                <div class="flex flex-col">
+                <h5 class="text-base font-bold text-navy-700 dark:text-white">
+                    Mesh Gradients
+                </h5>
+                <p class="mt-1 text-sm font-normal text-gray-600">
+                    Will Smith
+                </p>
+                </div>
+            </div>
+            <div class="mt-1 flex items-center justify-center text-navy-700 dark:text-white">
+                <div>
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 320 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M311.9 260.8L160 353.6 8 260.8 160 0l151.9 260.8zM160 383.4L8 290.6 160 512l152-221.4-152 92.8z"></path></svg>
+                </div>
+                <div class="ml-1 flex items-center text-sm font-bold text-navy-700 dark:text-white">
+                <p>   </p>
+                0.4<p class="ml-1">ETH</p>
+                </div>
+                <div class="ml-2 flex items-center text-sm font-normal text-gray-600 dark:text-white">
+                <p>30s</p>
+                <p class="ml-1">ago</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-evenly rounded-t-3xl mt-3 p-3 w-full">
+
+          <button (click)="onEmptyCart()" class=" linear rounded-[5px] bg-red-500 px-4 py-2 text-base font-medium text-brand-500 transition duration-200 hover:bg-red-600 active:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20">
+             Empty cart
+          </button>
+          <button routerLink="" class="linear rounded-[5px] bg-gray-500 px-4 py-2  text-base font-medium text-brand-500 transition duration-200 hover:bg-gray-600 active:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20">
+            Shop more
+         </button>
+         <button class="linear rounded-[5px] bg-gray-500 px-4 py-2 text-base font-medium text-brand-500 transition duration-200 hover:bg-gray-600 active:bg-gray-200 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 dark:active:bg-white/20">
+          Checkout
+       </button>
+      </div>
+    </div>
+</div> -->
+  <ng-container *ngIf="cartItems.length" class="min-h-screen" >
+    <div class="flex flex-col md:flex-row w-screen h-full px-14 py-7">
+
+      <!-- My Cart -->
+      <div class="w-full flex flex-col h-fit gap-4 p-4 ">
+          <p class="text-blue-900 text-xl font-extrabold">My cart</p>
+
+          <!-- Product -->
+          <div *ngFor="let item of cartItems" class="flex flex-col p-4 text-lg font-semibold shadow-md border rounded-sm">
+              <div class="flex flex-col md:flex-row gap-3 justify-between">
+                  <!-- Product Information -->
+                  <div class="flex flex-row gap-6 items-center">
+                      <div class="w-28 h-28">
+                          <img class="w-full h-full" [src]="item.thumbnail">
+                      </div>
+                      <div class="flex flex-col gap-1">
+                          <p class="text-lg text-gray-800 font-semibold">{{item.title}} - {{item.brand}}</p>
+                          <p class="text-xs text-gray-600 font-semibold"><span class="font-normal">{{item.description}}</span></p>
+                          <!-- <p class="text-xs text-gray-600 font-semibold">Size: <span class="font-normal">42</span></p> -->
+                      </div>
+                  </div>
+                  <!-- Price Information -->
+                  <div class="self-center text-center">
+                    <span class="text-emerald-500  text-sm  ml-2">({{item.discountPercentage.toFixed()}} %  OFF)</span>
+                      <p class="text-gray-600 font-normal line-through text-sm ">{{ item.price | currency }}
+                      </p>
+                      <p class="text-gray-800 font-normal text-xl">{{ (item.price - ((item.discountPercentage / 100) * item.price)).toFixed()  | currency }}</p>
+                  </div>
+                  <!-- Remove Product Icon -->
+                  <div class="self-center" (click)="onDeleteItem(item)" >
+                      <button class="">
+                          <svg class="" height="24px" width="24px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                          <g>
+                              <path d="M400,113.3h-80v-20c0-16.2-13.1-29.3-29.3-29.3h-69.5C205.1,64,192,77.1,192,93.3v20h-80V128h21.1l23.6,290.7   c0,16.2,13.1,29.3,29.3,29.3h141c16.2,0,29.3-13.1,29.3-29.3L379.6,128H400V113.3z M206.6,93.3c0-8.1,6.6-14.7,14.6-14.7h69.5   c8.1,0,14.6,6.6,14.6,14.7v20h-98.7V93.3z M341.6,417.9l0,0.4v0.4c0,8.1-6.6,14.7-14.6,14.7H186c-8.1,0-14.6-6.6-14.6-14.7v-0.4   l0-0.4L147.7,128h217.2L341.6,417.9z"/>
+                              <g>
+                              <rect height="241" width="14" x="249" y="160"/>
+                              <polygon points="320,160 305.4,160 294.7,401 309.3,401"/>
+                              <polygon points="206.5,160 192,160 202.7,401 217.3,401"/>
+                              </g>
+                          </g>
+                          </svg>
+                      </button>
+                  </div>
+              </div>
+              <!-- Product Quantity -->
+              <!-- <div class="flex flex-row self-center gap-1">
+                  <button class="w-5 h-5 self-center rounded-full border border-gray-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#d1d5db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M5 12h14" />
+                      </svg>
+                  </button>
+                  <input type="text" readonly="readonly" value="1" class="w-8 h-8 text-center text-gray-900 text-sm outline-none border border-gray-300 rounded-sm">
+                  <button class="w-5 h-5 self-center rounded-full border border-gray-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M12 5v14M5 12h14" />
+                      </svg>
+                  </button>
+              </div> -->
+          </div>
+
+      </div>
+
+      <!-- Purchase Resume -->
+      <div class="flex flex-col w-full md:w-2/3 h-fit gap-4 p-4">
+          <p class="text-blue-900 text-xl font-extrabold">Purchase Resume</p>
+          <div class="flex flex-col p-4 gap-4 text-lg font-semibold shadow-md border rounded-sm">
+              <div class="flex flex-row justify-between">
+                  <p class="text-gray-800">Subtotal ({{cartItems.length}} Items)</p>
+                  <p class="text-end font-bold">{{Subtotal | currency  }}</p>
+              </div>
+              <hr class="bg-gray-200 h-0.5">
+              <div class="flex flex-row justify-between">
+                  <p class="text-gray-800">Delivary Charges</p>
+                  <div>
+                  <p class="text-end font-bold">$3</p>
+                  <p class="text-gray-600 text-sm font-normal">Arrives {{today | date }}(Tommorrow) </p>
+                  </div>
+              </div>
+
+              <hr class="bg-gray-200 h-0.5">
+              <div class="flex flex-row justify-between">
+                  <p class="text-gray-800">Total</p>
+                  <div>
+                  <p class="text-end font-bold">{{(Subtotal + 3) | currency }}  </p>
+                  </div>
+              </div>
+              <div class="flex gap-2">
+                  <button class="transition-colors text-sm bg-blue-600 hover:bg-blue-700 p-2 rounded-sm w-full text-white text-hover shadow-md">
+                         CHECKOUT
+                  </button>
+                  <button routerLink="" class="transition-colors text-sm bg-white border border-gray-600 p-2 rounded-sm w-full text-gray-700 text-hover shadow-md">
+                          ADD MORE PRODUCTS
+                  </button>
+              </div>
+          </div>
+      </div>
+    </div>
+  </ng-container>
+
+
+<ng-container *ngIf="!cartItems.length" class="min-h-full" >
+  <span class="flex justify-center items-center" >
+    <img class="min-h-full rounded-md" src="https://images.pexels.com/photos/3964517/pexels-photo-3964517.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+
+  </span>
+  <div class="text-center" >CART IS EMPTY </div>
+  <div class="flex justify-center mt-4" >
+
+  <button class=" bg-white text-black px-2 py-1 rounded-sm mx-auto  " routerLink="" >Shop Now</button>
+</div>
+
+</ng-container>

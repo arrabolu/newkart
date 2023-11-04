@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
-import { catchError, finalize, of, throwError } from 'rxjs';
+import { Observable, catchError, finalize, of, throwError } from 'rxjs';
+import { iproducts } from './interfaces/Iproducts.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class ProductService {
 
   baseUrl = 'https://dummyjson.com/products'
 
-  getProducts(){
+  getProducts  () : Observable<any> {
    return this.http.get(this.baseUrl).pipe(
     catchError((err)=>{
       console.log("Error has thrown again with help of catchError ",err);

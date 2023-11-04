@@ -15,6 +15,8 @@ import { CarouselComponent } from './components/container/product-detail/carouse
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ToastrModule } from 'ngx-toastr';
+import { itemresolverResolver } from './services/itemresolver.resolver';
+import { CartComponent } from './components/cart/cart.component';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { ToastrModule } from 'ngx-toastr';
     ProductListComponent,
     ProductDetailComponent,
     BgchangerDirective,
-    CarouselComponent
+    CarouselComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -37,10 +40,9 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     CarouselModule,
     ToastrModule.forRoot({
-      // positionClass: 'toast-bottom-left',
     }),
   ],
-  providers: [],
+  providers: [itemresolverResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

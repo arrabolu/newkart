@@ -1,19 +1,16 @@
-
-
 <div class="ekart--header">
-  <div class="ekart-logo"
-  (click)="
-  onclick()"
-  >
-      <!-- <img src="images/logo.jpeg"> -->
-      NewCart
-
+  <div class="ekart-logo hover:cursor-pointer" (click)="onclick()">
+    <!-- <img src="images/logo.jpeg"> -->
+    NewCart
   </div>
 
-  <div class="ekart--top--bar">
-    <a class="fa fa-adjust" style="font-size: 20px;" (click)="onThemeChange()" ></a>
-    <a >Wishlist</a>
-    <a >Cart</a>
-</div>
-
+  <div class="ekart--top--bar hover:cursor-pointer ">
+    <a
+      class="fa fa-adjust"
+      style="font-size: 20px"
+      (click)="onThemeChange()"
+    ></a>
+    <a>Wishlist</a>
+    <a routerLink="cart" >Cart({{cartlength}})</a>
+  </div>
 </div>
